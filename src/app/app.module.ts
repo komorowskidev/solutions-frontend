@@ -4,15 +4,25 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { DataComponent } from './components/data/data.component';
+import { DescriptionComponent } from './components/description/description.component';
+import { NamesComponent } from './components/names/names.component';
+import { ResultComponent } from './components/result/result.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    DataComponent,
+    DescriptionComponent,
+    NamesComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
