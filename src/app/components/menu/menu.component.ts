@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit {
   version: string;
 
   constructor(private solutionClientService: SolutionClientService) {
-    this.version = 'uknown version';
+    this.version = 'Please wait about 30 seconds. Backend application is waking up.';
   }
 
   ngOnInit() {
