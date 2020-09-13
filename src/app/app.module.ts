@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -8,9 +9,6 @@ import { DataComponent } from './components/data/data.component';
 import { DescriptionComponent } from './components/description/description.component';
 import { NamesComponent } from './components/names/names.component';
 import { ResultComponent } from './components/result/result.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
-import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -24,8 +22,7 @@ import {MatSelectModule} from '@angular/material/select';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NoopAnimationsModule,
-    MatSelectModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

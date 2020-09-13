@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SolutionClientService } from 'src/app/services/solution-client.service';
-import { MatSelectChange } from '@angular/material/select';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -20,8 +19,8 @@ export class NamesComponent implements OnInit {
     });
   }
 
-  selectChanged(namesValue: MatSelectChange) {
-    this.appComponents.getProblem(namesValue.value);
-  }
+  // selectChanged(namesValue: MatSelectChange) {
+  //   this.appComponents.getProblem(namesValue.value);
+  // }
 
 }

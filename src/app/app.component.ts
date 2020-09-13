@@ -13,7 +13,7 @@ export class AppComponent {
   problem: Problem;
 
   constructor(private solutionClientService: SolutionClientService) {
-    this.problem = {description : 'choose problem name', exampleData : 'data'};
+    this.problem = {description : 'choose problem name', exampleData : ''};
   }
 
   public getProblem(problemName: string) {
