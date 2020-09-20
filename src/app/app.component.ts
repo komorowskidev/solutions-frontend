@@ -13,13 +13,21 @@ export class AppComponent {
   problem: Problem;
 
   constructor(private solutionClientService: SolutionClientService) {
-    this.problem = {description : 'choose problem name', exampleData : ''};
+    this.problem = {id: -1, name: '', description : 'choose problem name', exampleData : ''};
   }
 
-  public getProblem(problemName: string) {
-    this.solutionClientService.getProblem(problemName).subscribe(problem => {
-      this.problem.description = problem.description;
+  public getProblem(id: number) {
+    this.solutionClientService.getProblem(id).subscribe(problem => {
+	  this.problem.id = problem.id;
+	  this.problem.name = problem.name;      
+	  this.problem.description = problem.description;
       this.problem.exampleData = problem.exampleData;
     });
   }
+
+	public getResult(data: string){
+		this.solutionClientService.getSolution(this.problem.id, data).subscribe(solution => {
+			console.log(solution);
+		});
+	}
 }

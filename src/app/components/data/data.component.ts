@@ -18,4 +18,8 @@ export class DataComponent implements OnInit {
     this.problem = this.appComponents.problem;
   }
 
+	onClick(){
+		//this.appComponents.getResult(this.problem.exampleData);
+	}
+
 }

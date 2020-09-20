@@ -9,18 +9,23 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class NamesComponent implements OnInit {
 
-  names: Set<string>;
+  names: Map<number, string>;
 
-  constructor(private solutionClientService: SolutionClientService, private appComponents: AppComponent) { this.names = new Set(); }
+  constructor(private solutionClientService: SolutionClientService, private appComponents: AppComponent) { this.names = new Map(); }
 
   ngOnInit() {
-    this.solutionClientService.getNames().subscribe(names => {
-      this.names = names;
+    this.solutionClientService.getNames().subscribe(list => {
+		for(let map of list){
+			let id = parseInt(map['id']);
+			let name = map['name'];
+			this.names.set(id, name);
+		}	
+		this.appComponents.getProblem(this.names.keys().next().value);
     });
   }
 
-  // selectChanged(namesValue: MatSelectChange) {
-  //   this.appComponents.getProblem(namesValue.value);
-  // }
+  selectChanged(id: string) {
+    this.appComponents.getProblem(parseInt(id));
+  }
 
 }
