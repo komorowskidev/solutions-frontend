@@ -1,8 +1,7 @@
-<!-- <h4>List of problems:</h4>
-<mat-form-field class="full-width"> 
-  <mat-select placeholder="Problems" (selectionChange)="selectChanged($event)">
-    <mat-option *ngFor="let name of names" [value]="name">
-      {{name}}
-    </mat-option>
-  </mat-select>
-</mat-form-field> -->
+<h4>List of problems:</h4> 
+<select (change)="selectChanged($event.target.value)">
+  <option *ngFor="let name of names | keyvalue" [value]="name.key">
+    {{name.value}}
+  </option>
+</select>
+ 

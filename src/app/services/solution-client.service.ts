@@ -20,17 +20,27 @@ export class SolutionClientService {
     return this.httpClient.get<string>(API_URL + '/version');
   }
 
-  public getNames(): Observable<Set<string>> {
-    return this.httpClient.get<Set<string>>(API_URL + '/names');
+  public getNames(): Observable<Array<Map<string, string>>> {
+    return this.getFields('id,name');
   }
 
-  public getProblem(problemName: string) {
-    return this.httpClient.get<Problem>(API_URL + '/problem?name=' + problemName);
+  private getFields(fields: string): Observable<Array<Map<string, string>>> {
+	return this.httpClient.get<Array<Map<string, string>>>(API_URL + '/problems?fields=' + fields);
+} 
+
+  public getProblem(problemId: number) {
+    return this.httpClient.get<Problem>(API_URL + '/problems/:' + problemId);
   }
+
+	public getSolution(id: number, data: string) {
+		return this.httpClient.post<string>(API_URL + '/problems/:' + id, data);
+	}
 
 }
 
 export interface Problem {
+		id: number;
+		name: string;
         description: string;
         exampleData: string;
     }
