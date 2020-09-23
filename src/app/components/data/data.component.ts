@@ -19,7 +19,7 @@ export class DataComponent implements OnInit {
   }
 
 	onClick(){
-		//this.appComponents.getResult(this.problem.exampleData);
+		this.appComponents.getResult(this.problem.exampleData);
 	}
 
 }
