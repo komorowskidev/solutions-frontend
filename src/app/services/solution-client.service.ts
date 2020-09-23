@@ -17,7 +17,7 @@ export class SolutionClientService {
    }
 
   public getVersion(): Observable<string> {
-    return this.httpClient.get<string>(API_URL + '/version');
+    return this.httpClient.get(API_URL + '/version', {responseType: 'text'});
   }
 
   public getNames(): Observable<Array<Map<string, string>>> {
@@ -28,12 +28,12 @@ export class SolutionClientService {
 	return this.httpClient.get<Array<Map<string, string>>>(API_URL + '/problems?fields=' + fields);
 } 
 
-  public getProblem(problemId: number) {
+  public getProblem(problemId: number): Observable<Problem> {
     return this.httpClient.get<Problem>(API_URL + '/problems/:' + problemId);
   }
 
-	public getSolution(id: number, data: string) {
-		return this.httpClient.post<string>(API_URL + '/problems/:' + id, data);
+	public getSolution(id: number, data: string): Observable<string> {
+		return this.httpClient.post(API_URL + '/problems/:' + id, data, {responseType: 'text'});
 	}
 
 }
@@ -43,4 +43,5 @@ export interface Problem {
 		name: string;
         description: string;
         exampleData: string;
+		solution: string;
     }
