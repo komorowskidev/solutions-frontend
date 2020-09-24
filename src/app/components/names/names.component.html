@@ -1,7 +1,11 @@
-<h4>List of problems:</h4> 
-<select (change)="selectChanged($event.target.value)">
-  <option *ngFor="let name of names | keyvalue" [value]="name.key">
-    {{name.value}}
-  </option>
-</select>
- 
+<div class="col-md-12">
+	<div class="dropdown">
+	  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownProblems" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    List of problems:
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownProblems">
+	    <li *ngFor="let name of names | keyvalue" (click)="selectChanged(name.key)"><a href="#">{{name.value}}</a></li>
+	  </ul>
+	</div>
+</div>
