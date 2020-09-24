@@ -1,2 +1,13 @@
-<textarea rows="5" cols="50" [(ngModel)]="problem.exampleData"></textarea>
-<button (click)="onClick()">Get solution</button>
+<div class="col-md-12">
+	<div class="row">
+		<div class="col-md-12">
+			<label for="dataTextArea">Data:</label>
+			<textarea id="dataTextArea" class="form-control" rows="8" [(ngModel)]="problem.exampleData"></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<button type="button" class="btn btn-success" (click)="onClick()">Get solution</button>
+		</div>
+	</div>
+</div>
