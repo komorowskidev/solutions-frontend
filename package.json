@@ -24,7 +24,7 @@
     "@angular/router": "8.2.14",
     "bl": "4.0.3",
     "chokidar": "3.4.2",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "http-proxy": "1.18.1",
     "http-proxy-middleware": "1.0.5",
     "node-forge": "0.10.0",
